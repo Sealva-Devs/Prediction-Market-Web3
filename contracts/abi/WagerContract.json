@@ -1,0 +1,236 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createWager",
+    "inputs": [
+      { "name": "title", "type": "string", "internalType": "string" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "minPledge", "type": "uint256", "internalType": "uint256" },
+      { "name": "deadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "multiSigDeadlineHours", "type": "uint256", "internalType": "uint256" },
+      { "name": "isPublic", "type": "bool", "internalType": "bool" },
+      { "name": "marketId", "type": "string", "internalType": "string" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "pledge",
+    "inputs": [{ "name": "wagerId", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "resolveWager",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "internalType": "uint256" },
+      { "name": "winner", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "signMultiSig",
+    "inputs": [{ "name": "wagerId", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "releaseFunds",
+    "inputs": [{ "name": "wagerId", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "cancelWager",
+    "inputs": [{ "name": "wagerId", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getWager",
+    "inputs": [{ "name": "wagerId", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [
+      { "name": "id", "type": "uint256", "internalType": "uint256" },
+      { "name": "title", "type": "string", "internalType": "string" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "creator", "type": "address", "internalType": "address" },
+      { "name": "minPledge", "type": "uint256", "internalType": "uint256" },
+      { "name": "totalPledged", "type": "uint256", "internalType": "uint256" },
+      { "name": "deadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "status", "type": "uint8", "internalType": "enum WagerContract.WagerStatus" },
+      { "name": "winner", "type": "address", "internalType": "address" },
+      { "name": "resolvedAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "isPublic", "type": "bool", "internalType": "bool" },
+      { "name": "multiSigDeadlineHours", "type": "uint256", "internalType": "uint256" },
+      { "name": "multiSigDeadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "marketId", "type": "string", "internalType": "string" },
+      { "name": "participantCount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getParticipants",
+    "inputs": [{ "name": "wagerId", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [
+      { "name": "addresses", "type": "address[]", "internalType": "address[]" },
+      { "name": "amounts", "type": "uint256[]", "internalType": "uint256[]" },
+      { "name": "signed", "type": "bool[]", "internalType": "bool[]" },
+      { "name": "pledgedAt", "type": "uint256[]", "internalType": "uint256[]" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserWagers",
+    "inputs": [{ "name": "user", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "uint256[]", "internalType": "uint256[]" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "hasSigned",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "internalType": "uint256" },
+      { "name": "user", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getWagerCount",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "emergencyWithdraw",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "wagerCounter",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "wagers",
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [
+      { "name": "id", "type": "uint256", "internalType": "uint256" },
+      { "name": "title", "type": "string", "internalType": "string" },
+      { "name": "description", "type": "string", "internalType": "string" },
+      { "name": "creator", "type": "address", "internalType": "address" },
+      { "name": "minPledge", "type": "uint256", "internalType": "uint256" },
+      { "name": "totalPledged", "type": "uint256", "internalType": "uint256" },
+      { "name": "deadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "createdAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "status", "type": "uint8", "internalType": "enum WagerContract.WagerStatus" },
+      { "name": "winner", "type": "address", "internalType": "address" },
+      { "name": "resolvedAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "isPublic", "type": "bool", "internalType": "bool" },
+      { "name": "multiSigDeadlineHours", "type": "uint256", "internalType": "uint256" },
+      { "name": "multiSigDeadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "marketId", "type": "string", "internalType": "string" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "userWagers",
+    "inputs": [
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "WagerCreated",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "indexed": true, "internalType": "uint256" },
+      { "name": "creator", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "title", "type": "string", "indexed": false, "internalType": "string" },
+      { "name": "minPledge", "type": "uint256", "indexed": false, "internalType": "uint256" },
+      { "name": "deadline", "type": "uint256", "indexed": false, "internalType": "uint256" },
+      { "name": "isPublic", "type": "bool", "indexed": false, "internalType": "bool" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "Pledged",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "indexed": true, "internalType": "uint256" },
+      { "name": "participant", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "amount", "type": "uint256", "indexed": false, "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "WagerResolved",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "indexed": true, "internalType": "uint256" },
+      { "name": "winner", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "totalPayout", "type": "uint256", "indexed": false, "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "SignatureAdded",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "indexed": true, "internalType": "uint256" },
+      { "name": "signer", "type": "address", "indexed": true, "internalType": "address" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "FundsReleased",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "indexed": true, "internalType": "uint256" },
+      { "name": "recipient", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "amount", "type": "uint256", "indexed": false, "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "WagerCancelled",
+    "inputs": [
+      { "name": "wagerId", "type": "uint256", "indexed": true, "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      { "name": "previousOwner", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "newOwner", "type": "address", "indexed": true, "internalType": "address" }
+    ]
+  }
+]

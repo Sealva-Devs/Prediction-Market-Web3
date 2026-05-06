@@ -1,0 +1,2 @@
+# SPA fallback: serve index.html for all routes (Netlify uses netlify.toml redirects when present; this backs up in publish dir)
+/*    /index.html   200

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pledge — Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:system-ui,sans-serif;color:#666;">Loading…</div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Surface errors if the app bundle fails to load or throws before React mounts
+      window.addEventListener('error', function(e) {
+        var root = document.getElementById('root');
+        var stillLoading = root && root.children.length === 1 && root.textContent.indexOf('Loading') !== -1;
+        if (root && stillLoading) {
+          root.innerHTML = '<div style="padding:24px;font-family:system-ui,sans-serif;max-width:560px;margin:0 auto;"><h2 style="color:#c62828;">Something went wrong</h2><pre style="background:#f5f5f5;padding:12px;overflow:auto;font-size:12px;">' + (e.message || 'Unknown error') + '</pre><p style="color:#666;">Check the browser Console (F12) for details. If deploying on Netlify, ensure Base directory is <code>frontend</code> and env vars are set.</p></div>';
+        }
+      });
+    </script>
+  </body>
+</html>
