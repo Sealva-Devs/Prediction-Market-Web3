@@ -4,6 +4,7 @@ A **production-ready** **EVM prediction market** platform built with a **secure 
 
 **Status**: ✅ **Production Ready** — All functions tested, security hardened, and fully optimized.
 
+<img width="1904" height="918" alt="kurokage" src="https://github.com/user-attachments/assets/81eff319-64ed-463a-93cf-2a9c07e556cb" />
 ---
 
 ## What Is This Platform?
